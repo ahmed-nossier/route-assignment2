@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: #343a40;
+}
+
 .login-container {
   margin-top: 5%;
   margin-bottom: 5%;

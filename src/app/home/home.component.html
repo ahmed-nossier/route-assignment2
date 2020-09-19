@@ -18,3 +18,61 @@
     </div>
   </div>
 </div>
+<div class="container bg-dark">
+  <div class="row">
+    <div class="col-md-4  col-sm-12">
+
+      <ngb-carousel #carousel [interval]="4000">
+        <ng-template ngbSlide *ngFor="let tv of trendingtv; index as i" class="">
+          <div class="carousel-caption">
+            <!-- <h3>{{tv.name}}</h3>-->
+            <h3>Trending TV</h3>
+          </div>
+          <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="picsum-img-wrapper">
+              <img [src]="imagesPrefixs+tv.poster_path" alt="My image {{i + 1}} description" class="img-fluid">
+            </div>
+          </a>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <ngb-carousel #carousel [interval]="4000" class="bg-warning">
+        <ng-template ngbSlide *ngFor="let movie of trendingMovie; index as i">
+          <div class="carousel-caption">
+            <!-- <h3>{{movie.title}}</h3> -->
+            <h3>Trending movies</h3>
+          </div>
+          <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="picsum-img-wrapper">
+              <img [src]="imagesPrefixs+movie.poster_path" alt="My image {{i + 1}} description" class="img-fluid">
+            </div>
+          </a>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-md-4  col-sm-12">
+      <ngb-carousel #carousel [interval]="4000">
+        <ng-template ngbSlide *ngFor="let person of trendingtperson; index as i">
+          <div class="carousel-caption">
+
+            <!-- <h3>Name :{{person.name}}</h3> -->
+            <h3>Trending people</h3>
+          </div>
+          <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="picsum-img-wrapper">
+              <img *ngIf="person.profile_path;else nodata" [src]="imagesPrefixs+person.profile_path"
+                alt="No image avaliable" class="img-fluid">
+              <ng-template #nodata>
+                <img src="http://tinleychamber.org/wp-content/uploads/2019/01/no-image-available.png"
+                  alt="No image avaliable" class="">
+
+              </ng-template>
+            </div>
+          </a>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+
+  </div>
+</div>
