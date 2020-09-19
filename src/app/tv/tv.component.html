@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-12 bg-primary">
+    <h3 class="text-center">TRENDING TV SERIES OF THE DAY</h3>
+  </div>
+
+
+</div>
+
+<div class="container bg-dark">
+  <div class="row">
+    <div *ngFor="let tv of trendingtv" class="col-md-4 col-lg-3 col-sm-12  border-dark p-3">
+      <div class="tv bg-warning border-dark p-1 rounded">
+
+        <img [src]="imagesPrefixs+tv.poster_path" class="img-fluid w-100" alt="1">
+
+        <h5 class="text-center">{{tv.name}}</h5>
+      </div>
+    </div>
+
+  </div>
+</div>

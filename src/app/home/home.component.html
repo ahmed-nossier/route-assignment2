@@ -1,0 +1,20 @@
+<div class="modal" *ngIf="model">
+  <div class="container login-container ">
+    <div class="row">
+      <div class="rounded-circle or modx">
+        <button type="button" class="close" aria-label="Close" (click)="modelX()">
+          <span aria-hidden="true">X</span>
+        </button>
+
+      </div>
+      <div class="bg-dark rounded-circle or buttonFix">OR</div>
+
+      <div class="col-md-6 login-form-1">
+        <app-login></app-login>
+      </div>
+      <div class="col-md-6 login-form-2">
+        <app-registration></app-registration>
+      </div>
+    </div>
+  </div>
+</div>

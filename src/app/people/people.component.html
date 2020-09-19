@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-12 bg-primary">
+    <h3 class="text-center">TRENDING Persons OF THE DAY</h3>
+  </div>
+
+
+</div>
+
+<div class="container bg-dark">
+  <div class="row">
+    <div *ngFor="let person of trendingtperson" class="col-md-4 col-lg-3 col-sm-12  border-dark p-3">
+      <div class="tv bg-warning border-dark p-1 rounded">
+
+        <img *ngIf="person.profile_path;else nodata" [src]="imagesPrefixs+person.profile_path" alt="No image avaliable"
+          class="img-fluid w-100">
+
+        <h5 class="text-center">Name :{{person.name}}</h5>
+
+        <ng-template #nodata>
+          <img src="http://tinleychamber.org/wp-content/uploads/2019/01/no-image-available.png" alt="No image avaliable"
+            class="img-fluid w-100">
+
+        </ng-template>
+
+      </div>
+    </div>
+
+  </div>
+</div>
