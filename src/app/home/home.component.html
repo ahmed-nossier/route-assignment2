@@ -10,7 +10,10 @@
       <div class="bg-dark rounded-circle or buttonFix">OR</div>
 
       <div class="col-sm-6 login-form-1">
-        <app-login></app-login>
+        <h3>
+          {{try}}
+        </h3>
+        <app-login (stringout)="getStringFromChild($event)"></app-login>
       </div>
       <div class="col-sm-6 login-form-2">
         <app-registration></app-registration>

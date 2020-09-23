@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <nav aria-label="Page navigation example" class="col-sm-12 text-center">
+      <ul class="pagination">
+        <li
+          class="page-item"
+          [ngClass]="{ disabled: currentPage === 0 }"
+          (click)="currentPage = currentPage - 1"
+        >
+          <a class="page-link">Prev</a>
+        </li>
+        <li
+          class="page-item"
+          [ngClass]="{ active: i === currentPage }"
+          (click)="currentPage = i"
+          *ngFor="let image of ximages; let i = index"
+        >
+          <a class="page-link">{{ i + 1 }}</a>
+        </li>
+        <li
+          class="page-item"
+          [ngClass]="{ disabled: currentPage === ximages.length - 1 }"
+          (click)="currentPage = currentPage + 1"
+        >
+          <a class="page-link">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="row">
+    <h4 class="col-sm-12 text-center text-primary">
+      {{ ximages[currentPage].title | convert: "u" }}
+    </h4>
+    <div class="col-sm-12 text-center">
+      <img [src]="ximages[currentPage].url" alt="" class="" />
+    </div>
+  </div>
+</div>

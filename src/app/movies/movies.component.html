@@ -14,7 +14,7 @@
 
         <img [src]="imagesPrefixs+movie.poster_path" class="img-fluid w-100 rounded" alt="1">
 
-        <h5 class="text-center">{{movie.title}}</h5>
+        <h5 class="text-center">{{movie.title|convert:"u"}}</h5>
       </div>
     </div>
 

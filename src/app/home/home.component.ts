@@ -14,8 +14,9 @@ export class HomeComponent implements OnInit {
   trendingtv: any[];
   trendingtperson: any[];
   imagesPrefixs: string = 'https://image.tmdb.org/t/p/w500';
-
+  show2: boolean = false;
   model: boolean = true;
+  try: any;
   constructor(_moviesService: MoviesService) {
     _moviesService.getTrendingMovie().subscribe((data) => {
       this.trendingMovie = data.results;
@@ -32,5 +33,9 @@ export class HomeComponent implements OnInit {
   modelX() {
     this.model = false;
   }
+  getStringFromChild(data) {
+    this.model = !this.model;
+  }
+
   ngOnInit(): void {}
 }

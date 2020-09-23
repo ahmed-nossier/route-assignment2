@@ -1,15 +1,34 @@
 <h3>Login</h3>
-<form>
+
+<form [formGroup]='loginForm' (ngSubmit)=getLogininfo(loginForm)>
+
+  <div class="alert alert-danger m-auto" *ngIf="flag">
+    <p>Email or password not correct </p>
+  </div>
+
+  <div class="alert alert-success" *ngIf="success" role="alert">
+    login completed successfully </div>
+
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Your Email *" value="" />
+    <input type="text" formControlName="email"
+      [class.is-valid]="loginForm.get('email').errors ==null && loginForm.get('email').touched" class="form-control"
+      placeholder="Your Email *" value="" />
+    <p *ngIf="loginForm.get('email').errors !=null && loginForm.get('email').touched" class="py-2 text-danger">
+      invalid input</p>
+
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" placeholder="Your Password *" value="" />
+    <input type="password" formControlName="password"
+      [class.is-valid]="loginForm.get('password').errors ==null && loginForm.get('password').touched"
+      class="form-control" placeholder="Your Password *" value="" />
+    <p *ngIf="loginForm.get('password').errors !=null && loginForm.get('password').touched" class="py-2 text-danger">
+      invalid input</p>
+
   </div>
   <div class="form-group">
-    <input type="submit" class="btnSubmit" value="Login" />
+    <input type="submit" class="btnSubmit" value="Login" (click)="onEmit($event)" />
   </div>
-  <div class="form-group">
+  <div class=" form-group">
     <a href="#" class="ForgetPwd">Forget Password?</a>
   </div>
 </form>
